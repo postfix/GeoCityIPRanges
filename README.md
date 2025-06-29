@@ -64,7 +64,13 @@ If any required CSV is missing, the script will exit with an error listing which
 ## .gitignore
 
 ```gitignore
+# MaxMind GeoLite2 ZIP archives
 GeoLite2-ASN-CSV_*.zip
 GeoLite2-City-CSV_*.zip
 GeoLite2-Country-CSV_*.zip
+
+# MaxMind GeoLite2 extracted CSV folders
+GeoLite2-ASN-CSV_*/
+GeoLite2-City-CSV_*/
+GeoLite2-Country-CSV_*/
 ```
