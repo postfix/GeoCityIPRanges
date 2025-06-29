@@ -47,40 +47,16 @@ A command-line tool to obtain IP address ranges for specified cities using the M
 _No external Python packages are required beyond the standard library._
 
 ---
-
-## Usage
-
-Run the script with one or more city names:
+# Usage Examples
 
 ```bash
-./city_ip_ranges.py [city1] [city2] [...cityN]
+# 1) Specify all three paths explicitly:
+./city_ip_ranges.py \
+  --locations-csv GeoLite2-City-CSV_20250627/GeoLite2-City-Locations-en.csv \
+  --blocks4-csv   GeoLite2-City-CSV_20250627/GeoLite2-City-Blocks-IPv4.csv \
+  --blocks6-csv   GeoLite2-City-CSV_20250627/GeoLite2-City-Blocks-IPv6.csv \
+  Birmingham Bristol London
 ```
-
-### Examples
-
-- **Single city**  
-  ```bash
-  ./city_ip_ranges.py Kyiv
-  ```
-  Output:
-  ```
-  === Kyiv (geoname_id: 703448) ===
-
-  -- IPv4 CIDRs --
-  5.44.0.0/14
-  31.204.0.0/15
-  ...
-
-  -- IPv6 CIDRs --
-  2a00:bc80::/29
-  ...
-  ```
-
-- **Multiple cities**  
-  ```bash
-  ./city_ip_ranges.py Birmingham Bristol London
-  ```
-
 If any required CSV is missing, the script will exit with an error listing which file(s) need to be present.
 
 ---
