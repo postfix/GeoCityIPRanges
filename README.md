@@ -1,4 +1,4 @@
-# GeoCityIPRanges
+# GeoIPRanges
 
 A command-line tool to obtain IP address ranges for specified **cities** or **countries** using the local MaxMind GeoLite2 CSV databases.
 
@@ -55,7 +55,11 @@ _No external Python packages are required beyond the standard library._
 ### By City
 
 ```bash
-./geo_ip_ranges.py   --cities Kyiv London   --city-loc GeoLite2-City-CSV_20250627/GeoLite2-City-Locations-en.csv   --city-b4  GeoLite2-City-CSV_20250627/GeoLite2-City-Blocks-IPv4.csv   --city-b6  GeoLite2-City-CSV_20250627/GeoLite2-City-Blocks-IPv6.csv
+└─$ ./geo_ip_ranges.py \                     
+  --cities Bristol Birmingham London \
+  --city-loc   GeoLite2-City-CSV_20250627/GeoLite2-City-Locations-en.csv \
+  --city-b4    GeoLite2-City-CSV_20250627/GeoLite2-City-Blocks-IPv4.csv \
+  --city-b6    GeoLite2-City-CSV_20250627/GeoLite2-City-Blocks-IPv6.csv 
 ```
 
 ### By Country
@@ -64,11 +68,6 @@ _No external Python packages are required beyond the standard library._
 ./geo_ip_ranges.py   --countries US Ukraine   --country-loc GeoLite2-Country-CSV_20250627/GeoLite2-Country-Locations-en.csv   --country-b4 GeoLite2-Country-CSV_20250627/GeoLite2-Country-Blocks-IPv4.csv   --country-b6 GeoLite2-Country-CSV_20250627/GeoLite2-Country-Blocks-IPv6.csv
 ```
 
-### Mixed (Cities + Countries)
-
-```bash
-./geo_ip_ranges.py   --cities Paris   --countries FR   --city-loc    GeoLite2-City-Locations-en.csv   --city-b4     GeoLite2-City-Blocks-IPv4.csv   --city-b6     GeoLite2-City-Blocks-IPv6.csv   --country-loc GeoLite2-Country-Locations-en.csv   --country-b4  GeoLite2-Country-Blocks-IPv4.csv   --country-b6  GeoLite2-Country-Blocks-IPv6.csv
-```
 
 If any required CSV for your chosen mode is missing, the script will exit with an error listing which file(s) need to be present.
 
@@ -92,4 +91,4 @@ GeoLite2-Country-CSV_*/
 
 ## License
 
-Released under the MIT License. See [LICENSE](LICENSE) for details.
+Released under the BSD3 License. See [LICENSE](LICENSE) for details.
